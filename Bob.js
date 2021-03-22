@@ -2,9 +2,10 @@ class Bob  {
     constructor(x,y,radius) {
        var options={
         isStatic:false,
-        
+        restitution:1,
+        density:0.8,
+        friction:0,
        
-
        }
        this.body= Bodies.circle(x,y,radius,options);
        this.radius=radius;
@@ -17,9 +18,9 @@ class Bob  {
         push();
         translate(pos.x,pos.y);
         rotate(angle);
-        rectMode(CENTER);
+        ellipseMode(RADIUS);
         fill("Magenta");
-        circle(0,0,this.radius);
+        ellipse(0,0,this.radius,this.radius);
         pop();
       }
 };
